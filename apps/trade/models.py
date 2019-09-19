@@ -21,7 +21,7 @@ class ShoppingCart(models.Model):
         unique_together = ("user", "goods")
 
     def __str__(self):
-        return "%s($d)".format(self.goods.name, self.nums)
+        return str("%s($d)".format(self.goods.name, self.nums))
 
 
 class OrderInfo(models.Model):

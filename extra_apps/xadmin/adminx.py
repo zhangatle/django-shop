@@ -29,4 +29,7 @@ class LogAdmin(object):
     search_fields = ['ip_addr', 'message']
     model_icon = 'fa fa-cog'
 
+    def has_delete_permission(self, *args, **kwargs):
+        return True
+
 xadmin.site.register(Log, LogAdmin)

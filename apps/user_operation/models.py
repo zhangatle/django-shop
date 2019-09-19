@@ -21,7 +21,7 @@ class UserFav(models.Model):
         unique_together = ("user", "goods")
 
     def __str__(self):
-        return self.user.username
+        return str(self.user.username)
 
 
 class UserLeavingMessage(models.Model):
@@ -47,7 +47,7 @@ class UserLeavingMessage(models.Model):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        return self.subject
+        return str(self.subject)
 
 
 class UserAddress(models.Model):
@@ -68,4 +68,4 @@ class UserAddress(models.Model):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        return self.address
+        return str(self.address)

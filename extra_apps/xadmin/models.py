@@ -58,7 +58,7 @@ class Bookmark(models.Model):
         return base_url
 
     def __str__(self):
-        return self.title
+        return str(self.title)
 
     class Meta:
         verbose_name = _(u'Bookmark')
@@ -95,7 +95,7 @@ class UserSettings(models.Model):
         self.value = json.dumps(obj, cls=JSONEncoder, ensure_ascii=False)
 
     def __str__(self):
-        return "%s %s" % (self.user, self.key)
+        return str("%s %s" % (self.user, self.key))
 
     class Meta:
         verbose_name = _(u'User Setting')
@@ -131,7 +131,7 @@ class UserWidget(models.Model):
                 pass
 
     def __str__(self):
-        return "%s %s widget" % (self.user, self.widget_type)
+        return str("%s %s widget" % (self.user, self.widget_type))
 
     class Meta:
         verbose_name = _(u'User Widget')
@@ -181,7 +181,7 @@ class Log(models.Model):
         elif self.action_flag == 'delete' and self.object_repr:
             return ugettext('Deleted "%(object)s."') % {'object': self.object_repr}
 
-        return self.message
+        return str(self.message)
 
     def get_edited_object(self):
         "Returns the edited object represented by this log entry"

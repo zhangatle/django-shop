@@ -27,7 +27,7 @@ class GoodsCategory(models.Model):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class GoodsCategoryBrand(models.Model):
@@ -45,7 +45,7 @@ class GoodsCategoryBrand(models.Model):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class Goods(models.Model):
@@ -74,7 +74,7 @@ class Goods(models.Model):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class IndexAd(models.Model):
@@ -86,7 +86,7 @@ class IndexAd(models.Model):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        return self.goods.name
+        return str(self.goods.name)
 
 
 class GoodsImage(models.Model):
@@ -102,7 +102,7 @@ class GoodsImage(models.Model):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        return self.goods.name
+        return str(self.goods.name)
 
 
 class Banner(models.Model):
@@ -119,7 +119,7 @@ class Banner(models.Model):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        return self.goods.name
+        return str(self.goods.name)
 
 
 class HotSearchWords(models.Model):
@@ -135,4 +135,4 @@ class HotSearchWords(models.Model):
         verbose_name_plural = verbose_name
 
     def __str__(self):
-        return self.keywords
+        return str(self.keywords)
