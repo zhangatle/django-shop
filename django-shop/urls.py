@@ -18,8 +18,15 @@ from django.urls import path, include
 import xadmin
 from django.conf import settings
 from django.conf.urls.static import static
+from goods.views_base import GoodsListView
+from rest_framework.documentation import include_docs_urls
+from goods.views import GoodsListView
 
 urlpatterns = [
     path('admin/', xadmin.site.urls),
     path('ueditor/', include('DjangoUeditor.urls')),
+    path('api-auth/', include('rest_framework.urls')),
+    # 商品列表页
+    path('goods/', GoodsListView.as_view(), name="goods-list"),
+    path('docs/', include_docs_urls(title='mx'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
